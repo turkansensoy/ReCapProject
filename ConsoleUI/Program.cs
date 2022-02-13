@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using System;
 
 namespace ConsoleUI
@@ -8,7 +9,29 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Car();
+            // Car();
+           // BrandTest();
+
+        }
+
+        private static void BrandTest()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            // Brand brand1 = new Brand {BrandName="Volvo"};
+              brandManager.Add(new Brand { BrandName = "Opel" });
+            var result = brandManager.GetAll();
+            if (result.Success)
+            {
+                foreach (var brand in result.Data)
+                {
+                    Console.WriteLine(brand.BrandName);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+            
         }
 
         private static void Car()
