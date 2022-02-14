@@ -9,5 +9,6 @@ namespace Business.Constants
        public  static string Added="Eklendi";
         public static string Invalid= "Araba ismi en az 2 karakter ve günlük ücret en az 0 olmalıdı";
         public static string Deleted = "Silindi";
+        public static string RentalAddedInvalid="Arç Eklenmedi";
     }
 }
